@@ -1,8 +1,7 @@
-
 :root {
   --background-color: #ffffff;
   --text-color: #000000;
-  --header-background-color: #61dafb;
+  --header-background-color: #67a7b7;
   --card-background: #f8f9fa;
 }
 
@@ -23,7 +22,7 @@ body {
   text-align: center;
 }
 
-
+/* Оформление карточек фильмов */
 .card {
   background-color: var(--card-background);
   border-radius: 10px;
@@ -47,14 +46,9 @@ body {
   border-radius: 10px 10px 0 0;
 }
 
-
-.App-header {
-  display: none;
-}
-
-
+/* Стиль для кнопки переключения темы */
 .btn-modern {
-  background-color: #343a40; 
+  background-color: #316fae; 
   color: #fff;
   border-radius: 25px;
   padding: 10px 20px;
@@ -73,19 +67,18 @@ body {
   transform: scale(1.05);
 }
 
-
+/* Стили для выпадающих списков */
 select {
   max-height: 100px;
   overflow-y: auto;
 }
 
-
+/* Анимация логотипа */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 
 @keyframes App-logo-spin {
   from {
@@ -96,18 +89,39 @@ select {
   }
 }
 
+/* Оформление заголовка и хедера */
 .App-header {
   background-color: var(--header-background-color);
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: var(--text-color);
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+/* Стили для заголовка */
+.App-title {
+  font-family: 'Arial', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+/* Подзаголовок */
+.App-subtitle {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  color: #666;
+  margin-top: 10px;
 }
 
 .App-link {
   color: var(--text-color);
+  text-decoration: none;
 }
-
