@@ -1,0 +1,113 @@
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --header-background-color: #61dafb;
+  --card-background: #f8f9fa;
+}
+
+[data-theme='dark'] {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --header-background-color: #282c34;
+  --card-background: #444;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.App {
+  text-align: center;
+}
+
+
+.card {
+  background-color: var(--card-background);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.card-text {
+  font-size: 1rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.card-img-top {
+  border-radius: 10px 10px 0 0;
+}
+
+
+.App-header {
+  display: none;
+}
+
+
+.btn-modern {
+  background-color: #343a40; 
+  color: #fff;
+  border-radius: 25px;
+  padding: 10px 20px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-modern:hover {
+  background-color: #007bff;
+  transform: scale(1.05);
+}
+
+
+select {
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.App-header {
+  background-color: var(--header-background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--text-color);
+}
+
+.App-link {
+  color: var(--text-color);
+}
+
