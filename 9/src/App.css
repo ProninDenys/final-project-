@@ -5,13 +5,6 @@
   --card-background: #f8f9fa;
 }
 
-[data-theme='dark'] {
-  --background-color: #1a1a1a;
-  --text-color: #ffffff;
-  --header-background-color: #282c34;
-  --card-background: #444;
-}
-
 body {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -22,12 +15,16 @@ body {
   text-align: center;
 }
 
-/* Оформление карточек фильмов */
 .card {
   background-color: var(--card-background);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .card-title {
@@ -46,77 +43,38 @@ body {
   border-radius: 10px 10px 0 0;
 }
 
-/* Стиль для кнопки переключения темы */
-.btn-modern {
-  background-color: #316fae; 
-  color: #fff;
-  border-radius: 25px;
-  padding: 10px 20px;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-modern:hover {
-  background-color: #007bff;
-  transform: scale(1.05);
-}
-
-/* Стили для выпадающих списков */
-select {
-  max-height: 100px;
-  overflow-y: auto;
-}
-
-/* Анимация логотипа */
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Оформление заголовка и хедера */
 .App-header {
   background-color: var(--header-background-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 40px;
+  margin-bottom: 20px;
   color: var(--text-color);
   text-align: center;
-  margin-bottom: 30px;
-  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Стили для заголовка */
+.App-header:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 .App-title {
-  font-family: 'Arial', sans-serif;
-  font-size: 3rem;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 3px;
   color: var(--text-color);
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Подзаголовок */
 .App-subtitle {
-  font-family: 'Arial', sans-serif;
-  font-size: 1.5rem;
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
   color: #666;
   margin-top: 10px;
 }
@@ -124,4 +82,71 @@ select {
 .App-link {
   color: var(--text-color);
   text-decoration: none;
+}
+
+.App-title {
+  animation: fadeInDown 1s ease forwards;
+}
+
+.App-subtitle {
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-search {
+  background: linear-gradient(45deg, #6a11cb, #2575fc); 
+  color: #fff; 
+  border: none;
+  border-radius: 10px;
+  padding: 0.4rem 1.2rem; 
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.btn-search:hover {
+  transform: scale(1.05); 
+}
+
+.btn-search:active {
+  transform: scale(0.95); 
+}
+
+
+@media (max-width: 768px) {
+  .btn-search {
+    font-size: 0.9rem; 
+    padding: 10px 20px; 
+  
+  }
+}
+
+
+@media (min-width: 768px) {
+  .btn-search {
+    font-size: 1rem;
+  }
 }

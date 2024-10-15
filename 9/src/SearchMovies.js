@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { searchMovies, getGenres, getMovieDetails, getSimilarMovies, discoverMovies } from './api';
 import { Modal, Button } from 'react-bootstrap';
-import 'bootstrap-icons/font/bootstrap-icons.css'; // Импорт Bootstrap Icons
+import 'bootstrap-icons/font/bootstrap-icons.css'; 
 
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500'; 
 
@@ -117,7 +117,9 @@ const SearchMovies = () => {
           </div>
 
           <div className="col-md-1">
-            <button type="submit" className="btn btn-primary w-100">Search</button>
+          <button type="submit" className="btn-search">
+  Search
+</button>
           </div>
         </div>
       </form>
@@ -137,12 +139,13 @@ const SearchMovies = () => {
                 <div className="card-img-top" style={{ backgroundColor: '#ccc', height: '400px' }}>No Image</div>
               )}
               <div className="card-body">
-                <h5 className="card-title">{movie.title}</h5>
-                <p className="card-text d-flex justify-content-center align-items-center">
-                  {renderStars(movie.vote_average)} 
-                  <span className="ms-2">({movie.vote_average.toFixed(1)})</span> 
-                </p>
-              </div>
+  <h5 className="card-title">{movie.title}</h5>
+  <p className="card-text">Year: {new Date(movie.release_date).getFullYear()}</p> {/* Добавляем год выпуска */}
+  <p className="card-text d-flex justify-content-center align-items-center">
+    {renderStars(movie.vote_average)} 
+    <span className="ms-2">({movie.vote_average.toFixed(1)})</span> 
+  </p>
+</div>
             </div>
           </div>
         ))}
