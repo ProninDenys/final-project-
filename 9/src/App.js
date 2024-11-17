@@ -58,9 +58,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className="App-title">
-          <a href="/" className="text-decoration-none" style={{ color: '#800080' }}>Movie Finder</a>
+          <a href="/" className="text-decoration-none" style={{ color: '#F1E0C6' }}>MOVIE FINDER</a>
         </h1>
-        <p className="App-subtitle" style={{ color: '#800080' }}>Discover the latest and most popular movies</p>
+        <p className="App-subtitle" style={{ color: '#F1E0C6' }}>Discover the latest and most popular movies</p>
       </header>
 
       <main>
